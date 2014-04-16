@@ -1,0 +1,76 @@
+@(basket: List[BasketItem], userForm: Form[BasketItem])
+
+@import helper._
+
+@main("Dan & Rory's Cinema") {
+
+        <div id="header">
+            <h1>DAN & RORY'S CINEMA</h1>
+
+        </div>
+        <div id="panel">
+            <h3>Book Tickets</h3>
+            @form(routes.Application.newBasketItem()) {
+                @select(
+                userForm("movieTitle"),
+                options = options(Movies.titles),
+                '_default -> "Please choose a movie",
+                '_label -> "Movie",
+                '_error -> userForm("movieTitle").error.map(_.withMessage("Please select movie"))
+            )
+
+            @select(
+            userForm("movieStartTime"),
+            options(Seq("3pm","6pm","9pm")),
+            '_default -> "Select start time",
+            '_label -> "Movie Start Time",
+            '_error -> userForm("movieStartTime").error.map(_.withMessage("Please select start time"))
+            )
+
+            @select(
+            userForm("ticketType"),
+            options(Seq("Adult","Student","Concession","14 and Under")),
+            /**'_default -> "Please choose a ticket type", */
+            '_label -> "Ticket Type",
+            '_error -> userForm("ticketType").error.map(_.withMessage("Please select a ticket type"))
+            )
+
+            @select(
+            userForm("numberTickets"),
+            options(Seq("1","2","3","4","5","6","7","8")),
+            '_label -> "Number of tickets",
+            '_error -> userForm("numberTickets").error.map(_.withMessage("Please select a number of tickets"))
+            )
+            @inputText(
+            userForm("voucherCode"),
+            '_label -> "Enter Voucher Code"
+            )
+
+            <input type="submit" value="add">
+
+            }
+
+        </div>
+
+        <div id="basket">
+           <h1>Your Order</h1>
+
+            <ul>
+                @for(item <- basket) {
+                <li>
+
+                    @item.numberTickets x @item.ticketType ticket(s) for @item.movieTitle at @item.movieStartTime
+                               }
+                </li>
+            </ul>
+        </div>
+
+        <div id="booking">
+
+        </div>
+
+        <div id="footer">
+
+        </div>
+
+}
