@@ -5,15 +5,15 @@
 
 @import helper._
 
-@main("Dan & Rory's Cinema") {
+@main("MoneySuperCinema") {
 
         <div id="container">
         <div id="header">
-            <h1>DAN & RORY'S CINEMA</h1>
+            <h1>MoneySuper&copy;inema</h1>
 
         </div>
         <div id="panel">
-            <h2>Book Tickets</h2>
+            <h2>Select Tickets</h2>
             @form(routes.Application.newBasketItem()) {
                 @select(
                 userForm("movieTitle"),
@@ -57,7 +57,7 @@
         </div>
 
         <div id="basket">
-           <h2>Your Order</h2>
+           <h2>Your Order</h2 >
 
             <ul>
                 @for(item <- basket) {

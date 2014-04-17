@@ -3,26 +3,33 @@
     margin: 0 auto;
 }
 
+#panel h2,#basket h2 {
+   color: rgb(86, 40, 115);
+
+}
+
+
 #header {
     width: 100;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-color: #69D5E8;
+    padding-top: 30px;
+    padding-bottom: 30px;
     text-align: center;
+    color: rgb(86, 40, 115);
 }
 
 #panel {
     float: left;
     padding: 15px;
-
+    background-color: rgb(247, 247, 247);
+    width: 150;
 }
 
 
 #basket {
     float: right;
-    width: 600px;
-    min-height: 700px;
-    background-color: #E2FEFF;
     padding: 15PX;
+    width: 600px;
+    background-color: rgb(247, 247, 247);
+    min-height: 700px;
 }
 
