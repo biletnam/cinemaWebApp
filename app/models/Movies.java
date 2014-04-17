@@ -27,4 +27,15 @@ public class Movies {
         }
          return all;
     }
+
+    public static Movie getMovieByTitleAndStartTime(String title, String startTime) {
+        Movie movieChoice = new Movie();
+        for (int i=0; i<movieLibrary.size(); i++ ) {
+            Movie movie = movieLibrary.get(i);
+            if (movie.getTitle() == title && movie.getStartTime() == startTime) {
+                movieChoice = movie;
+            }
+        }
+        return movieChoice;
+    }
 }

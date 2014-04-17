@@ -1,4 +1,7 @@
-@(basket: List[BasketItem], userForm: Form[BasketItem])
+@(basket: List[BasketItem],
+  userForm: Form[BasketItem],
+  prices: Prices
+)
 
 @import helper._
 
@@ -59,9 +62,19 @@
                 @for(item <- basket) {
                 <li>
 
-                    @item.numberTickets x @item.ticketType ticket(s) for @item.movieTitle at @item.movieStartTime
+                    @item.numberTickets x @item.ticketType ticket(s) for @item.movieTitle at @item.movieStartTime @prices.getStudentPrices
+                    @item.ticketType match {
+                        case "Student" => {@prices.getStudentPrices}
+                        case "Concession" => {@prices.getConcessionPrices}
+                        case "14 and Under" => {@prices.getUnder15Prices}
+                        case "Adult" => {@prices.getAdultPrices}
+                    }
+                    @form(routes.Application.removeBasketItem(item.id)) {
+                    <input type="submit" value="remove">
                                }
+                    }
                 </li>
+                @prices.getTotalPrice
             </ul>
         </div>
 

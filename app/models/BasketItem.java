@@ -1,10 +1,14 @@
 package models;
 
+import com.moneysupermarket.cinema.Calculator;
+import com.moneysupermarket.cinema.Movie;
+import com.moneysupermarket.cinema.PurchaseInformation;
 import play.data.validation.Constraints.*;
 import play.db.ebean.*;
 
 import javax.persistence.*;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +26,8 @@ public class BasketItem extends Model {
     public int numberOfConcessionTickets;
     public int numberOfUnder15Tickets;
     public int numberOfAdultTickets;
+
+    Calculator calculator = new Calculator();
 
     @Id
     public Long id;
