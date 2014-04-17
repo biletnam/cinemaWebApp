@@ -1,0 +1,28 @@
+#container {
+    width: 850px;
+    margin: 0 auto;
+}
+
+#header {
+    width: 100;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #69D5E8;
+    text-align: center;
+}
+
+#panel {
+    float: left;
+    padding: 15px;
+
+}
+
+
+#basket {
+    float: right;
+    width: 600px;
+    min-height: 700px;
+    background-color: #E2FEFF;
+    padding: 15PX;
+}
+
