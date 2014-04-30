@@ -15,6 +15,7 @@
     padding-bottom: 30px;
     text-align: center;
     color: rgb(86, 40, 115);
+    shadow: 100;
 }
 
 #panel {
@@ -22,6 +23,7 @@
     padding: 15px;
     background-color: rgb(247, 247, 247);
     width: 150;
+    height: 100%;
 }
 
 
@@ -30,6 +32,6 @@
     padding: 15PX;
     width: 600px;
     background-color: rgb(247, 247, 247);
-    min-height: 700px;
+    height: 100%;
 }
 
